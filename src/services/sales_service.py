@@ -1,5 +1,10 @@
 from src.domain.models import User
 from src.db.repository import dbFunctions
+import pandas as pd
+from datetime import datetime
+import sys
+
+
 class SalesFunctions:
     def __init__(self, user:User,db:dbFunctions):
         self.userinf = user
@@ -114,4 +119,62 @@ class SalesFunctions:
         else:
             for i, r in enumerate(views, start=1):
                 print(f"{i}. PID {r['pid']}  {r['name']}  views={r['count']}")
+        self.export_top_products_excel(ords, views)
+    def export_top_products_excel(self, ords, views):
+        """
+        Export top products results to an Excel report.
+        - Sheet 1: TopByOrders
+        - Sheet 2: TopByViews
+        Adds Rank and sorts by count desc.
+        """
+        if not ords and not views:
+            print("[X] No top product data to export.")
+            return None
+
+        ts = datetime.now().strftime("%Y%m%d_%H%M%S")
+        filename = f"top_products_report_{ts}.xlsx"
+
+        def build_df(rows, metric_name):
+            # rows: list[dict] like [{'pid':..., 'name':..., 'count':...}, ...]
+            df = pd.DataFrame(rows)
+
+            if df.empty:
+                return df
+
+
+            for col in ["pid", "name", "count"]:
+                if col not in df.columns:
+                    df[col] = None
+
+    
+            df["count"] = pd.to_numeric(df["count"], errors="coerce")
+            df = df.sort_values(by="count", ascending=False, na_position="last").reset_index(drop=True)
+
+        
+            df.insert(0, "rank", range(1, len(df) + 1))
+
+        
+            df = df.rename(columns={
+                "rank": "Rank",
+                "pid": "Product ID",
+                "name": "Product Name",
+                "count": metric_name
+            })
+
+            return df
+
+        df_orders = build_df(ords, "Distinct Orders")
+        df_views = build_df(views, "Views")
+
+        with pd.ExcelWriter(filename, engine="openpyxl") as writer:
+            (df_orders if not df_orders.empty else pd.DataFrame(columns=["Rank", "Product ID", "Product Name", "Distinct Orders"]))\
+                .to_excel(writer, sheet_name="TopByOrders", index=False)
+
+            (df_views if not df_views.empty else pd.DataFrame(columns=["Rank", "Product ID", "Product Name", "Views"]))\
+                .to_excel(writer, sheet_name="TopByViews", index=False)
+
+        print(f"[✓] Excel report generated: {filename}")
+        return filename
+
+
 # --- END SalesFunctions --------------------------------------------------

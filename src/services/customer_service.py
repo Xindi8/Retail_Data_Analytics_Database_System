@@ -1,5 +1,7 @@
 from src.domain.models import User, SessionInf
 from src.db.repository import dbFunctions
+import sys
+
 
 
 #   This class contains all menu and interaction logic for a customer user.

@@ -1,0 +1,46 @@
+﻿pid,name,category,price,stock_count,descr
+301,Phone,Electronics,700.0,59,Latest smartphone model
+302,Gaming PC,ELECTRONICS,1500.0,20,High end gaming PC
+303,E-reader,electronics,120.0,80,Portable e-reader
+304,Desk,Home,200.0,30,Office desk
+305,Board Game,Toys,45.0,100,Family board game
+306,Earbuds,Electronics,150.0,70,Wireless earbuds
+307,Fitness Tracker,ElectrOniCS,180.0,50,Health tracker
+308,Printer,electronics,250.0,25,Color printer
+309,Blender,Home Appliances,85.0,40,Kitchen blender
+310,Camera Pro,Electronics,800.0,15,Professional camera
+501,Tablet Pro,Electronics,800.0,50,High-end tablet
+502,Gaming Console,ELECTRONICS,500.0,40,Latest gaming console
+503,E-reader Pro,electronics,130.0,70,Premium e-reader
+504,Wardrobe,Home,300.0,20,Large wardrobe
+505,Puzzle,Toys,25.0,90,Brain puzzle
+506,Bluetooth Speaker,Electronics,120.0,60,Portable speaker
+507,Smart Ring,ElectrOniCS,200.0,30,Wearable smart ring
+508,Scanner,electronics,220.0,25,Document scanner
+509,Microwave,Home Appliances,110.0,35,Kitchen microwave
+510,Camera Lite,Electronics,650.0,15,Compact camera
+601,VR Headset,Electronics,299.99,38,Immersive virtual reality headset
+602,Smart Thermostat,Gadgets,129.99,60,WiFi connected thermostat
+603,Robot Vacuum,electronics,399.99,30,Automated cleaning robot
+604,Cookware Set,Home,89.99,50,Stainless steel cookware
+605,Action Figure,Toys,19.99,100,Collectible action figure
+606,LED Lamp,ElectrOniCS,39.99,80,Smart LED lamp
+607,Wireless Charger,ELECTRONICS,49.99,70,Fast wireless charger
+608,Laptop Sleeve,Accessories,33.0,65,Protective laptop sleeve
+609,Espresso Machine,Kitchen,219.99,20,High‑pressure espresso machine
+610,Noise Cancelling Earbuds,electronics,149.99,45,Earbuds with noise cancellation
+701,Smartwatch,Electronics,199.99,50,Smart watch with health tracking
+702,Drone,ELECTRONICS,299.99,40,Remote controlled drone
+703,Smart Glasses,electronics,149.99,60,AR smart glasses
+704,Office Chair,Furniture,89.99,70,Ergonomic office chair
+705,Board Game,Toys,29.99,80,Family board game
+706,Wireless Keyboard,ElectroNics,49.99,89,Bluetooth keyboard
+707,Fitness Tracker,Tech,59.99,75,Fitness band
+708,Air Fryer,Kitchen,129.99,30,Digital air fryer
+709,Bluetooth Earbuds,Electronics,79.99,65,Wireless earbuds
+710,Smart Lock,Smart Devices,129.99,40,WiFi smart lock
+713,phone3,electronics,10.0,9,smartphone
+711,phone1,electronics,100.0,30,smartphone
+712,phone2,electronics,200.0,20,smartphone
+714,phone6,electonics,300.0,9,smartphone
+715,phone666,electronics,20.0,10,smartphone
